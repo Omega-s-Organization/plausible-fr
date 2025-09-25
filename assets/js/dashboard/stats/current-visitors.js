@@ -41,7 +41,7 @@ export default function CurrentVisitors({
         info={
           <div>
             <p className="whitespace-nowrap text-small">
-              Dernière mise à jour il y'a {' '}
+              Dernière mise à jour il y'a {' '} secondes
               <SecondsSinceLastLoad lastLoadTimestamp={lastLoadTimestamp} />
             </p>
             <p className="whitespace-nowrap font-normal text-xs">
@@ -69,7 +69,7 @@ export default function CurrentVisitors({
             {currentVisitors}
             <span className="hidden lg:inline">
               {' '}
-              current visitor{currentVisitors === 1 ? '' : 's'}
+              visiteur{currentVisitors === 1 ? '' : 's'} connecté{currentVisitors === 1 ? '' : 's'}
             </span>
           </div>
         </AppNavigationLink>
