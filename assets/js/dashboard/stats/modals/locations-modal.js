@@ -89,7 +89,7 @@ function LocationsModal({ currentView }) {
     }
 
     return [
-      metrics.createVisitors({ renderLabel: (_query) => 'Visitors' }),
+      metrics.createVisitors({ renderLabel: (_query) => 'Visiteurs uniques' }),
       currentView === 'countries' && metrics.createPercentage()
     ].filter((metric) => !!metric)
   }

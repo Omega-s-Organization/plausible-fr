@@ -15,10 +15,10 @@ import { QueryPeriod } from '../../query-time-periods'
 
 const INTERVAL_LABELS: Record<string, string> = {
   minute: 'Minutes',
-  hour: 'Hours',
-  day: 'Days',
-  week: 'Weeks',
-  month: 'Months'
+  hour: 'Heures',
+  day: 'Jours',
+  week: 'Semaines',
+  month: 'Mois'
 }
 
 function validIntervals(site: PlausibleSite, query: DashboardQuery): string[] {

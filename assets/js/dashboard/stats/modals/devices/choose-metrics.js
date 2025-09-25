@@ -19,7 +19,7 @@ export default function chooseMetrics(query) {
   if (isRealTimeDashboard(query)) {
     return [
       metrics.createVisitors({
-        renderLabel: (_query) => 'Current visitors',
+        renderLabel: (_query) => 'Visiteurs actuels',
         width: 'w-36'
       }),
       metrics.createPercentage()
@@ -27,7 +27,7 @@ export default function chooseMetrics(query) {
   }
 
   return [
-    metrics.createVisitors({ renderLabel: (_query) => 'Visitors' }),
+    metrics.createVisitors({ renderLabel: (_query) => 'Visiteurs uniques' }),
     metrics.createPercentage(),
     metrics.createBounceRate(),
     metrics.createVisitDuration()

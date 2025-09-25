@@ -274,7 +274,7 @@ export const getDatePeriodGroups = ({
   const groups: LinkItem[][] = [
     [
       [
-        ['Today', 'D'],
+        ["Aujourd'hui", 'D'],
         {
           search: (s) => ({
             ...s,
@@ -290,7 +290,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Yesterday', 'E'],
+        ['Hier', 'E'],
         {
           search: (s) => ({
             ...s,
@@ -306,7 +306,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Realtime', 'R'],
+        ['En temps réel', 'R'],
         {
           search: (s) => ({
             ...s,
@@ -321,7 +321,7 @@ export const getDatePeriodGroups = ({
     ],
     [
       [
-        ['Last 7 Days', 'W'],
+        ['7 derniers jours', 'W'],
         {
           search: (s) => ({
             ...s,
@@ -334,7 +334,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Last 28 Days', 'F'],
+        ['28 derniers jours', 'F'],
         {
           search: (s) => ({
             ...s,
@@ -347,7 +347,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Last 30 Days', 'T'],
+        ['30 derniers jours', 'T'],
         {
           hidden: true,
           search: (s) => ({
@@ -361,7 +361,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Last 91 Days', 'N'],
+        ['91 derniers jours', 'N'],
         {
           search: (s) => ({
             ...s,
@@ -376,7 +376,7 @@ export const getDatePeriodGroups = ({
     ],
     [
       [
-        ['Month to Date', 'M'],
+        ['Depuis le début du mois', 'M'],
         {
           search: (s) => ({
             ...s,
@@ -391,7 +391,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Last Month', 'P'],
+        ['Mois dernier', 'P'],
         {
           search: (s) => ({
             ...s,
@@ -409,7 +409,7 @@ export const getDatePeriodGroups = ({
     ],
     [
       [
-        ['Year to Date', 'Y'],
+        ["Depuis le début de l'année", 'Y'],
         {
           search: (s) => ({
             ...s,
@@ -423,7 +423,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Last 6 months', 'S'],
+        ['6 derniers mois', 'S'],
         {
           hidden: true,
           search: (s) => ({
@@ -436,7 +436,7 @@ export const getDatePeriodGroups = ({
         }
       ],
       [
-        ['Last 12 Months', 'L'],
+        ['12 derniers mois', 'L'],
         {
           search: (s) => ({
             ...s,
@@ -453,7 +453,7 @@ export const getDatePeriodGroups = ({
 
   const lastGroup: LinkItem[] = [
     [
-      ['All time', 'A'],
+      ['Toutes périodes', 'A'],
       {
         search: (s) => ({
           ...s,

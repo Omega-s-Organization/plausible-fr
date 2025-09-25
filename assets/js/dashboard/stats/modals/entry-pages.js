@@ -61,16 +61,16 @@ function EntryPagesModal() {
     if (isRealTimeDashboard(query)) {
       return [
         metrics.createVisitors({
-          renderLabel: (_query) => 'Current visitors',
+          renderLabel: (_query) => 'Visiteurs actuels',
           width: 'w-36'
         })
       ]
     }
 
     return [
-      metrics.createVisitors({ renderLabel: (_query) => 'Visitors' }),
+      metrics.createVisitors({ renderLabel: (_query) => 'Visiteurs uniques' }),
       metrics.createVisits({
-        renderLabel: (_query) => 'Total Entrances',
+        renderLabel: (_query) => 'Entrées totales',
         width: 'w-36'
       }),
       metrics.createBounceRate(),

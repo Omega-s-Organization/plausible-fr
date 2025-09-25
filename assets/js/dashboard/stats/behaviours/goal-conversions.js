@@ -69,11 +69,11 @@ function SpecialPropBreakdown({ prop, afterFetchData }) {
   function chooseMetrics() {
     return [
       metrics.createVisitors({
-        renderLabel: (_query) => 'Visitors',
+        renderLabel: (_query) => 'Visiteurs uniques',
         meta: { plot: true }
       }),
       metrics.createEvents({
-        renderLabel: (_query) => 'Events',
+        renderLabel: (_query) => 'Événements',
         meta: { hiddenOnMobile: true }
       }),
       metrics.createConversionRate()

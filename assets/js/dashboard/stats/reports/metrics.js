@@ -70,8 +70,8 @@ export const createVisitors = (props) => {
     renderLabel = props.renderLabel
   } else {
     renderLabel = (query) => {
-      const defaultLabel = props.defaultLabel || 'Visitors'
-      const realtimeLabel = props.realtimeLabel || 'Current visitors'
+      const defaultLabel = props.defaultLabel || 'Visiteurs uniques'
+      const realtimeLabel = props.realtimeLabel || 'Visiteurs actuels'
       const goalFilterLabel = props.goalFilterLabel || 'Conversions'
 
       if (query.period === 'realtime') {
@@ -94,7 +94,7 @@ export const createVisitors = (props) => {
 }
 
 export const createConversionRate = (props) => {
-  const renderLabel = (_query) => 'CR'
+  const renderLabel = (_query) => 'TC'
   return new Metric({
     width: 'w-24',
     ...props,
@@ -120,7 +120,7 @@ export const createEvents = (props) => {
 }
 
 export const createTotalRevenue = (props) => {
-  const renderLabel = (_query) => 'Revenue'
+  const renderLabel = (_query) => 'Revenu'
   return new Metric({
     width: 'w-24',
     ...props,
@@ -131,7 +131,7 @@ export const createTotalRevenue = (props) => {
 }
 
 export const createAverageRevenue = (props) => {
-  const renderLabel = (_query) => 'Average'
+  const renderLabel = (_query) => 'Moyenne'
   return new Metric({
     width: 'w-24',
     ...props,
@@ -142,7 +142,7 @@ export const createAverageRevenue = (props) => {
 }
 
 export const createTotalVisitors = (props) => {
-  const renderLabel = (_query) => 'Total Visitors'
+  const renderLabel = (_query) => 'Visiteurs totaux'
   return new Metric({
     width: 'w-28',
     ...props,
@@ -157,7 +157,7 @@ export const createVisits = (props) => {
 }
 
 export const createVisitDuration = (props) => {
-  const renderLabel = (_query) => 'Visit Duration'
+  const renderLabel = (_query) => 'Durée de visite'
   return new Metric({
     width: 'w-36',
     ...props,
@@ -168,7 +168,7 @@ export const createVisitDuration = (props) => {
 }
 
 export const createBounceRate = (props) => {
-  const renderLabel = (_query) => 'Bounce Rate'
+  const renderLabel = (_query) => 'Taux de rebond'
   return new Metric({
     width: 'w-28',
     ...props,
@@ -179,7 +179,7 @@ export const createBounceRate = (props) => {
 }
 
 export const createPageviews = (props) => {
-  const renderLabel = (_query) => 'Pageviews'
+  const renderLabel = (_query) => 'Pages vues'
   return new Metric({
     width: 'w-28',
     ...props,
@@ -190,7 +190,7 @@ export const createPageviews = (props) => {
 }
 
 export const createTimeOnPage = (props) => {
-  const renderLabel = (_query) => 'Time on Page'
+  const renderLabel = (_query) => 'Temps sur la page'
   return new Metric({
     width: 'w-32',
     ...props,
@@ -201,7 +201,7 @@ export const createTimeOnPage = (props) => {
 }
 
 export const createExitRate = (props) => {
-  const renderLabel = (_query) => 'Exit Rate'
+  const renderLabel = (_query) => 'Taux de sortie'
   return new Metric({
     width: 'w-28',
     ...props,
@@ -212,7 +212,7 @@ export const createExitRate = (props) => {
 }
 
 export const createScrollDepth = (props) => {
-  const renderLabel = (_query) => 'Scroll Depth'
+  const renderLabel = (_query) => 'Profondeur de défilement'
   return new Metric({
     width: 'w-28',
     ...props,

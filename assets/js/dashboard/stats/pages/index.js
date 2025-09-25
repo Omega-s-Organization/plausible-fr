@@ -147,9 +147,9 @@ function TopPages({ afterFetchData }) {
 }
 
 const labelFor = {
-  pages: 'Top Pages',
-  'entry-pages': 'Entry Pages',
-  'exit-pages': 'Exit Pages'
+  pages: 'Pages principales',
+  'entry-pages': 'Pages d\'entrée',
+  'exit-pages': 'Pages de sortie'
 }
 
 export default function Pages() {
@@ -192,7 +192,7 @@ export default function Pages() {
       <div className="w-full flex justify-between">
         <div className="flex gap-x-1">
           <h3 className="font-bold dark:text-gray-100">
-            {labelFor[mode] || 'Page Visits'}
+            {labelFor[mode] || 'Visites de pages'}
           </h3>
           <ImportedQueryUnsupportedWarning
             loading={loading}
@@ -201,9 +201,9 @@ export default function Pages() {
         </div>
         <TabWrapper>
           {[
-            { label: 'Top Pages', value: 'pages' },
-            { label: 'Entry Pages', value: 'entry-pages' },
-            { label: 'Exit Pages', value: 'exit-pages' }
+            { label: 'Pages principales', value: 'pages' },
+            { label: 'Pages d\'entrée', value: 'entry-pages' },
+            { label: 'Pages de sortie', value: 'exit-pages' }
           ].map(({ value, label }) => (
             <TabButton
               active={mode === value}

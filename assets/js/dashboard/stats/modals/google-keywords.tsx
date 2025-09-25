@@ -23,7 +23,7 @@ type GoogleKeywordItem = {
 }
 
 const metrics = [
-  createVisitors({ renderLabel: () => 'Visitors', sortable: false }),
+  createVisitors({ renderLabel: () => 'Visiteurs uniques', sortable: false }),
   new Metric({
     width: 'w-28',
     key: 'impressions',

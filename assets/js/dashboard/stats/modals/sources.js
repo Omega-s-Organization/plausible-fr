@@ -141,7 +141,7 @@ function SourcesModal({ currentView }) {
     }
 
     return [
-      metrics.createVisitors({ renderLabel: (_query) => 'Visitors' }),
+      metrics.createVisitors({ renderLabel: (_query) => 'Visiteurs uniques' }),
       metrics.createBounceRate(),
       metrics.createVisitDuration()
     ]

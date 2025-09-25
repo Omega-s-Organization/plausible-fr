@@ -14,7 +14,7 @@ mockResizeObserver()
 const domain = 'picking-query-dates.test'
 const periodStorageKey = `period__${domain}`
 
-test('if no period is stored, loads with default value of "Last 28 days", all expected options are present', async () => {
+test('if no period is stored, loads with default value of "28 derniers jours", all expected options are present', async () => {
   expect(localStorage.getItem(periodStorageKey)).toBe(null)
   render(<QueryPeriodsPicker />, {
     wrapper: (props) => (
@@ -22,24 +22,24 @@ test('if no period is stored, loads with default value of "Last 28 days", all ex
     )
   })
 
-  await userEvent.click(screen.getByText('Last 28 days'))
+  await userEvent.click(screen.getByText('28 derniers jours'))
 
   expect(screen.getByTestId('datemenu')).toBeVisible()
   expect(screen.getAllByRole('link').map((el) => el.textContent)).toEqual(
     [
-      ['Today', 'D'],
-      ['Yesterday', 'E'],
-      ['Realtime', 'R'],
-      ['Last 7 Days', 'W'],
-      ['Last 28 Days', 'F'],
-      ['Last 91 Days', 'N'],
-      ['Month to Date', 'M'],
-      ['Last Month', 'P'],
-      ['Year to Date', 'Y'],
-      ['Last 12 Months', 'L'],
-      ['All time', 'A'],
-      ['Custom Range', 'C'],
-      ['Compare', 'X']
+      ["Aujourd'hui", 'D'],
+      ['Hier', 'E'],
+      ['En temps réel', 'R'],
+      ['7 derniers jours', 'W'],
+      ['28 derniers jours', 'F'],
+      ['91 derniers jours', 'N'],
+      ['Depuis le début du mois', 'M'],
+      ['Mois dernier', 'P'],
+      ["Depuis le début de l'année", 'Y'],
+      ['12 derniers mois', 'L'],
+      ['Toutes périodes', 'A'],
+      ['Période personnalisée', 'C'],
+      ['Comparer', 'X']
     ].map((a) => a.join(''))
   )
 })
@@ -52,9 +52,9 @@ test('user can select a new period and its value is stored', async () => {
   })
 
   expect(screen.queryByTestId('datemenu')).toBeNull()
-  await userEvent.click(screen.getByText('Last 28 days'))
+  await userEvent.click(screen.getByText('28 derniers jours'))
   expect(screen.getByTestId('datemenu')).toBeVisible()
-  await userEvent.click(screen.getByText('All time'))
+  await userEvent.click(screen.getByText('Toutes périodes'))
   expect(screen.queryByTestId('datemenu')).not.toBeInTheDocument()
   expect(localStorage.getItem(periodStorageKey)).toBe('all')
 })
@@ -68,15 +68,15 @@ test('period "all" is respected, and Compare option is not present for it in men
     )
   })
 
-  await userEvent.click(screen.getByText('All time'))
+  await userEvent.click(screen.getByText('Toutes périodes'))
   expect(screen.getByTestId('datemenu')).toBeVisible()
-  expect(screen.queryByText('Compare')).toBeNull()
+  expect(screen.queryByText('Comparer')).toBeNull()
 })
 
 test.each([
-  [{ period: 'all' }, 'All time'],
-  [{ period: 'month' }, 'Month to Date'],
-  [{ period: 'year' }, 'Year to Date']
+  [{ period: 'all' }, 'Toutes périodes'],
+  [{ period: 'month' }, 'Depuis le début du mois'],
+  [{ period: 'year' }, "Depuis le début de l'année"]
 ])(
   'the query period from search %p is respected and stored',
   async (searchRecord, buttonText) => {
@@ -102,7 +102,7 @@ test.each([
     { period: 'custom', from: '2024-08-10', to: '2024-08-20' },
     '10 Aug - 20 Aug 24'
   ],
-  [{ period: 'realtime' }, 'Realtime']
+  [{ period: 'realtime' }, 'En temps réel']
 ])(
   'the query period from search %p is respected but not stored',
   async (searchRecord, buttonText) => {
@@ -123,8 +123,8 @@ test.each([
 )
 
 test.each([
-  ['all', '7d', 'Last 7 days'],
-  ['30d', 'month', 'Month to Date']
+  ['all', '7d', '7 derniers jours'],
+  ['30d', 'month', 'Depuis le début du mois']
 ])(
   'if the stored period is %p but query period is %p, query is respected and the stored period is overwritten',
   async (storedPeriod, queryPeriod, buttonText) => {
@@ -168,19 +168,19 @@ test('going back resets the stored query period to previous value', async () => 
     }
   )
 
-  await userEvent.click(screen.getByText('Last 28 days'))
-  await userEvent.click(screen.getByText('Year to Date'))
+  await userEvent.click(screen.getByText('28 derniers jours'))
+  await userEvent.click(screen.getByText("Depuis le début de l'année"))
   expect(screen.queryByTestId('datemenu')).not.toBeInTheDocument()
 
   expect(localStorage.getItem(periodStorageKey)).toBe('year')
 
-  await userEvent.click(screen.getByText('Year to Date'))
-  await userEvent.click(screen.getByText('Month to Date'))
+  await userEvent.click(screen.getByText("Depuis le début de l'année"))
+  await userEvent.click(screen.getByText('Depuis le début du mois'))
   expect(screen.queryByTestId('datemenu')).not.toBeInTheDocument()
 
   expect(localStorage.getItem(periodStorageKey)).toBe('month')
 
   await userEvent.click(screen.getByTestId('browser-back'))
-  expect(screen.getByText('Year to Date')).toBeVisible()
+  expect(screen.getByText("Depuis le début de l'année")).toBeVisible()
   expect(localStorage.getItem(periodStorageKey)).toBe('year')
 })

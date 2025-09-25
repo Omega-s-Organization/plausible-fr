@@ -66,11 +66,11 @@ function ExitPagesModal() {
 
     return [
       metrics.createVisitors({
-        renderLabel: (_query) => 'Visitors',
+        renderLabel: (_query) => 'Visiteurs uniques',
         sortable: true
       }),
       metrics.createVisits({
-        renderLabel: (_query) => 'Total Exits',
+        renderLabel: (_query) => 'Sorties totales',
         sortable: true
       }),
       metrics.createExitRate()

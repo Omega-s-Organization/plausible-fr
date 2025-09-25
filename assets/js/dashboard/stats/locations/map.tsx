@@ -49,8 +49,8 @@ const WorldMap = ({
 
   const labels =
     query.period === 'realtime'
-      ? { singular: 'Current visitor', plural: 'Current visitors' }
-      : { singular: 'Visitor', plural: 'Visitors' }
+      ? { singular: 'Visiteur actuel', plural: 'Visiteurs actuels' }
+      : { singular: 'Visiteur', plural: 'Visiteurs' }
 
   const { data, refetch, isFetching, isError } = useQuery({
     queryKey: ['countries', 'map', query],

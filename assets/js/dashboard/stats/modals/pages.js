@@ -61,14 +61,14 @@ function PagesModal() {
     if (isRealTimeDashboard(query)) {
       return [
         metrics.createVisitors({
-          renderLabel: (_query) => 'Current visitors',
+          renderLabel: (_query) => 'Visiteurs actuels',
           width: 'w-36'
         })
       ]
     }
 
     return [
-      metrics.createVisitors({ renderLabel: (_query) => 'Visitors' }),
+      metrics.createVisitors({ renderLabel: (_query) => 'Visiteurs uniques' }),
       metrics.createPageviews(),
       metrics.createBounceRate(),
       metrics.createTimeOnPage(),

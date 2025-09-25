@@ -108,11 +108,11 @@ export default function Properties({ afterFetchData }) {
   function chooseMetrics() {
     return [
       metrics.createVisitors({
-        renderLabel: (_query) => 'Visitors',
+        renderLabel: (_query) => 'Visiteurs uniques',
         meta: { plot: true }
       }),
       metrics.createEvents({
-        renderLabel: (_query) => 'Events',
+        renderLabel: (_query) => 'Événements',
         meta: { hiddenOnMobile: true }
       }),
       hasConversionGoalFilter(query) && metrics.createConversionRate(),
