@@ -130,7 +130,7 @@ const QueryPeriodMenuInner = ({
       onEvent: closeDropdown,
       extraItemsInLastGroup: [
         [
-          ['Custom Range', 'C'],
+          ['Période personnalisée', 'C'],
           {
             search: (s) => s,
             isActive: ({ query }) => query.period === QueryPeriod.custom,

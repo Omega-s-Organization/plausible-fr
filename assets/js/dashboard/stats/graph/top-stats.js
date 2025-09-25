@@ -63,8 +63,8 @@ export default function TopStats({
 
         {stat.name === 'Current visitors' && (
           <p className="font-normal text-xs">
-            Last updated{' '}
-            <SecondsSinceLastLoad lastLoadTimestamp={lastLoadTimestamp} />s ago
+            Dernière mise à jour il y'a {' '} secondes
+            <SecondsSinceLastLoad lastLoadTimestamp={lastLoadTimestamp} />
           </p>
         )}
 

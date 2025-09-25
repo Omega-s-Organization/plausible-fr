@@ -48,10 +48,10 @@ export enum ComparisonMode {
 }
 
 export const COMPARISON_MODES = {
-  [ComparisonMode.off]: 'Disable comparison',
-  [ComparisonMode.previous_period]: 'Previous period',
-  [ComparisonMode.year_over_year]: 'Year over year',
-  [ComparisonMode.custom]: 'Custom period'
+  [ComparisonMode.off]: 'Désactiver la comparaison',
+  [ComparisonMode.previous_period]: 'Période précédente',
+  [ComparisonMode.year_over_year]: 'Sur un an',
+  [ComparisonMode.custom]: 'Période personnalisée'
 }
 
 export enum ComparisonMatchMode {
@@ -60,8 +60,8 @@ export enum ComparisonMatchMode {
 }
 
 export const COMPARISON_MATCH_MODE_LABELS = {
-  [ComparisonMatchMode.MatchDayOfWeek]: 'Match day of week',
-  [ComparisonMatchMode.MatchExactDate]: 'Match exact date'
+  [ComparisonMatchMode.MatchDayOfWeek]: 'Correspond au jour de la semaine',
+  [ComparisonMatchMode.MatchExactDate]: 'Correspond à la date exacte'
 }
 
 export const DEFAULT_COMPARISON_MODE = ComparisonMode.previous_period
@@ -482,7 +482,7 @@ export const getCompareLinkItem = ({
   onEvent: () => void
 }): LinkItem => [
   [
-    isComparisonEnabled(query.comparison) ? 'Disable comparison' : 'Compare',
+    isComparisonEnabled(query.comparison) ? 'Désactiver la comparaison' : 'Comparer',
     'X'
   ],
   {
@@ -601,47 +601,47 @@ export function getCurrentPeriodDisplayName({
 }) {
   if (query.period === 'day') {
     if (isToday(site, query.date)) {
-      return 'Today'
+      return "Aujourd'hui"
     }
     return formatDay(query.date)
   }
   if (query.period === '7d') {
-    return 'Last 7 days'
+    return '7 derniers jours'
   }
   if (query.period === '28d') {
-    return 'Last 28 days'
+    return '28 derniers jours'
   }
   if (query.period === '30d') {
-    return 'Last 30 days'
+    return '30 derniers jours'
   }
   if (query.period === '91d') {
-    return 'Last 91 days'
+    return '91 derniers jours'
   }
   if (query.period === 'month') {
     if (isThisMonth(site, query.date)) {
-      return 'Month to Date'
+      return 'Depuis le début du mois'
     }
     return formatMonthYYYY(query.date)
   }
   if (query.period === '6mo') {
-    return 'Last 6 months'
+    return '6 derniers mois'
   }
   if (query.period === '12mo') {
-    return 'Last 12 months'
+    return '12 derniers mois'
   }
   if (query.period === 'year') {
     if (isThisYear(site, query.date)) {
-      return 'Year to Date'
+      return "Depuis le début de l'année"
     }
     return formatYear(query.date)
   }
   if (query.period === 'all') {
-    return 'All time'
+    return 'toutes périodes'
   }
   if (query.period === 'custom') {
     return formatDateRange(site, query.from, query.to)
   }
-  return 'Realtime'
+  return 'En temps réel'
 }
 
 export function getCurrentComparisonPeriodDisplayName({

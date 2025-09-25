@@ -63,7 +63,7 @@ const FilterMenuItems = ({ closeDropdown }: { closeDropdown: () => void }) => {
       >
         <MagnifyingGlassIcon className="block h-4 w-4" />
         <span className={popover.toggleButton.classNames.truncatedText}>
-          Filter
+          Filtrer
         </span>
       </Popover.Button>
       <Transition
