@@ -8,7 +8,7 @@ services:
       - ALLOWED_IFRAME_DOMAINS=*.sslip.io
       - DATABASE_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@plausible-db:5432/${POSTGRES_DB:-plausible-db}
       - CLICKHOUSE_DATABASE_URL=http://plausible-events-db:8123/plausible_events_db
-      - BASE_URL=http://m888048ss4cksww8kcw4ocw4.62.169.23.154.sslip.io
+      - BASE_URL=${BASE_URL}
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       - TOTP_VAULT_KEY=${TOTP_VAULT_KEY}
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
