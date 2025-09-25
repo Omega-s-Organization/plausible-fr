@@ -309,17 +309,17 @@ defmodule PlausibleWeb.Api.StatsController do
 
     top_stats = [
       %{
-        name: "Current visitors",
+        name: "Visiteurs actuels",
         graph_metric: :current_visitors,
         value: Stats.current_visitors(site)
       },
       %{
-        name: "Unique conversions (last 30 min)",
+        name: "Conversions uniques (30 dernières min)",
         graph_metric: :visitors,
         value: unique_conversions
       },
       %{
-        name: "Total conversions (last 30 min)",
+        name: "Conversions totales (30 dernières min)",
         graph_metric: :events,
         value: total_conversions
       }
@@ -346,17 +346,17 @@ defmodule PlausibleWeb.Api.StatsController do
 
     top_stats = [
       %{
-        name: "Current visitors",
+        name: "Visiteurs actuels",
         graph_metric: :current_visitors,
         value: Stats.current_visitors(site)
       },
       %{
-        name: "Unique visitors (last 30 min)",
+        name: "Visiteurs uniques (30 dernières min)",
         graph_metric: :visitors,
         value: visitors
       },
       %{
-        name: "Pageviews (last 30 min)",
+        name: "Pages vues (30 dernières min)",
         graph_metric: :pageviews,
         value: pageviews
       }
@@ -378,15 +378,15 @@ defmodule PlausibleWeb.Api.StatsController do
 
     top_stats =
       [
-        top_stats_entry(results, "Unique conversions", :visitors),
-        top_stats_entry(results, "Total conversions", :events),
+        top_stats_entry(results, "Conversions uniques", :visitors),
+        top_stats_entry(results, "Conversions totales", :events),
         on_ee do
-          top_stats_entry(results, "Average revenue", :average_revenue)
+          top_stats_entry(results, "Revenu moyen", :average_revenue)
         end,
         on_ee do
-          top_stats_entry(results, "Total revenue", :total_revenue)
+          top_stats_entry(results, "Revenu total", :total_revenue)
         end,
-        top_stats_entry(results, "Conversion rate", :conversion_rate)
+        top_stats_entry(results, "Taux de conversion", :conversion_rate)
       ]
       |> Enum.reject(&is_nil/1)
 
@@ -415,19 +415,19 @@ defmodule PlausibleWeb.Api.StatsController do
 
     top_stats =
       [
-        top_stats_entry(results, "Unique visitors", :visitors),
-        top_stats_entry(results, "Total visits", :visits),
-        top_stats_entry(results, "Total pageviews", :pageviews),
-        top_stats_entry(results, "Views per visit", :views_per_visit),
-        top_stats_entry(results, "Bounce rate", :bounce_rate),
-        top_stats_entry(results, "Visit duration", :visit_duration),
-        top_stats_entry(results, "Time on page", :time_on_page,
+        top_stats_entry(results, "Visiteurs uniques", :visitors),
+        top_stats_entry(results, "Visites totales", :visits),
+        top_stats_entry(results, "Pages vues totales", :pageviews),
+        top_stats_entry(results, "Vues par visite", :views_per_visit),
+        top_stats_entry(results, "Taux de rebond", :bounce_rate),
+        top_stats_entry(results, "Durée de visite", :visit_duration),
+        top_stats_entry(results, "Temps sur la page", :time_on_page,
           formatter: fn
             nil -> 0
             value -> value
           end
         ),
-        top_stats_entry(results, "Scroll depth", :scroll_depth)
+        top_stats_entry(results, "Profondeur de défilement", :scroll_depth)
       ]
       |> Enum.filter(& &1)
 

@@ -61,7 +61,7 @@ export default function TopStats({
           </div>
         )}
 
-        {stat.name === 'Current visitors' && (
+        {(stat.name === 'Current visitors' || stat.name === 'Visiteurs actuels') && (
           <p className="font-normal text-xs">
             Dernière mise à jour il y'a {' '} secondes
             <SecondsSinceLastLoad lastLoadTimestamp={lastLoadTimestamp} />
