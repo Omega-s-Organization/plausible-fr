@@ -40,7 +40,7 @@ function DashboardStats({
         </div>
       </div>
 
-      <Behaviours importedDataInView={importedDataInView} />
+      {/* <Behaviours importedDataInView={importedDataInView} /> */}
     </>
   )
 }
