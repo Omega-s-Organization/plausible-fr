@@ -83,7 +83,7 @@ export default function StatsExport() {
 
   return (
     <Tooltip
-      info={<div className="font-normal truncate">Click to export stats</div>}
+      info={<div className="font-normal truncate">Exportez les statistiques</div>}
       className="w-4 h-4"
     >
       {exporting && renderLoading()}

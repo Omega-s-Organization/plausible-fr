@@ -71,6 +71,12 @@ export default function TopStats({
         {warning ? (
           <p className="font-normal text-xs whitespace-nowrap">* {warning}</p>
         ) : null}
+        
+        {stat.name === 'Taux de rebond' && (
+          <p className="font-normal text-xs mt-2 text-gray-600 dark:text-gray-400">
+            Correspond au pourcentage de visiteurs qui quittent votre site après avoir vu une seule page, sans interagir davantage.
+          </p>
+        )}
       </div>
     )
   }

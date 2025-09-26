@@ -12,24 +12,24 @@ import { SortDirection } from '../../hooks/use-order-by'
 
 const VIEWS = {
   countries: {
-    title: 'Top Countries',
+    title: 'Top Pays',
     dimension: 'country',
     endpoint: '/countries',
-    dimensionLabel: 'Country',
+    dimensionLabel: 'Pays',
     defaultOrder: ['visitors', SortDirection.desc]
   },
   regions: {
-    title: 'Top Regions',
+    title: 'Top Régions',
     dimension: 'region',
     endpoint: '/regions',
-    dimensionLabel: 'Region',
+    dimensionLabel: 'Région',
     defaultOrder: ['visitors', SortDirection.desc]
   },
   cities: {
-    title: 'Top Cities',
+    title: 'Top Villes',
     dimension: 'city',
     endpoint: '/cities',
-    dimensionLabel: 'City',
+    dimensionLabel: 'Ville',
     defaultOrder: ['visitors', SortDirection.desc]
   }
 }

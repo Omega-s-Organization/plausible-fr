@@ -260,7 +260,7 @@ export default function SourceList() {
         </div>
         <TabWrapper>
           {[
-            { value: 'channels', label: 'Channels' },
+            { value: 'channels', label: 'Canaux' },
             { value: 'all', label: 'Sources' }
           ].map(({ value, label }) => (
             <TabButton
@@ -282,7 +282,7 @@ export default function SourceList() {
               selected: currentTab === value
             }))}
           >
-            {UTM_TAGS[currentTab] ? UTM_TAGS[currentTab].title : 'Campaigns'}
+            {UTM_TAGS[currentTab] ? UTM_TAGS[currentTab].title : 'Campagnes'}
           </DropdownTabButton>
         </TabWrapper>
       </div>
