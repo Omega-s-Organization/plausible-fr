@@ -283,8 +283,8 @@ export default function Behaviours({ importedDataInView }) {
     let enabledModes = []
 
     for (const feature of Object.keys(sectionTitles)) {
-      // Masquer complètement la section Goal Conversions
-      if (feature === CONVERSIONS) {
+      // Masquer complètement les sections Goal Conversions et Custom Properties
+      if (feature === CONVERSIONS || feature === PROPS) {
         continue
       }
       
