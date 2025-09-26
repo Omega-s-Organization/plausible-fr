@@ -33,12 +33,8 @@ export function getFilterListItems({
     ],
     [
       {
-        title: 'Device',
+        title: 'Appareil',
         modals: ['location', 'screen', 'browser', 'os']
-      },
-      {
-        title: 'Behaviour',
-        modals: ['goal', !!propsAvailable && 'props']
       }
     ]
   ]

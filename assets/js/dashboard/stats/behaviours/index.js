@@ -283,6 +283,11 @@ export default function Behaviours({ importedDataInView }) {
     let enabledModes = []
 
     for (const feature of Object.keys(sectionTitles)) {
+      // Masquer complètement la section Goal Conversions
+      if (feature === CONVERSIONS) {
+        continue
+      }
+      
       const isOptedOut = site[feature + 'OptedOut']
       const isAvailable = site[feature + 'Available'] !== false
 
