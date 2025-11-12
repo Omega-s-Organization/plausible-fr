@@ -21,6 +21,8 @@ services:
       - SMTP_USER_NAME=${SMTP_USER_NAME}
       - SMTP_USER_PWD=${SMTP_USER_PWD}
       - SMTP_HOST_SSL_ENABLED=${SMTP_HOST_SSL_ENABLED}
+      - MAXMIND_LICENSE_KEY=${MAXMIND_LICENSE_KEY}
+      - MAXMIND_EDITION=GeoLite2-City
     depends_on:
       plausible-db:
         condition: service_healthy
