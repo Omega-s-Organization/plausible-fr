@@ -415,7 +415,7 @@ defmodule PlausibleWeb.Api.StatsController do
 
     top_stats =
       [
-        top_stats_entry(results, "Visiteurs uniques", :visitors),
+        top_stats_entry(results, "Visiteurs uniques prep", :visitors),
         top_stats_entry(results, "Visites totales", :visits),
         top_stats_entry(results, "Pages vues totales", :pageviews),
         top_stats_entry(results, "Vues par visite", :views_per_visit),
